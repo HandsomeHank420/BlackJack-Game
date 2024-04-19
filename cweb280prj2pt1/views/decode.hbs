@@ -1,0 +1,14 @@
+<h1>{{title}}</h1>
+<h1>{{msg}}</h1>
+<!--
+    sugar to add button to copy the url to the users clipboard for easy pasting
+-->
+<br><br>
+<button class="btn btn-primary" onclick="copyURL()">Copy URL To Share</button>
+
+<script type="text/javascript">
+    function copyURL(){
+    let url = document.location.href
+    navigator.clipboard.writeText(url)
+    }
+</script>

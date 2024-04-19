@@ -1,0 +1,14 @@
+<form action="/keys" method="post" novalidate>
+    <h1>{{title}}</h1>
+    <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label" for="privatekey">Private Key</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" name="privatekey" id="privatekey">{{privatekey}}</textarea>
+    </div>
+    <br><br>
+    <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label" for="publickey">Public Key</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" name="publickey" id="publickey">{{publickey}}</textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save Keys</button>
+</form>

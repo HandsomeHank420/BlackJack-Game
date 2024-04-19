@@ -1,0 +1,8 @@
+<ul>
+    {{#each message}}
+    {{#with this}}
+    <li><a href="/decode?msg={{messageLong}}">{{messageShort}}</a></li>
+    {{/with}}
+    {{/each}}
+</ul>
+

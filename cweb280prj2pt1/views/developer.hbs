@@ -1,0 +1,19 @@
+<form action="/developer" method="post" novalidate>
+    <h1>{{title}}</h1>
+
+    <div class="mb-2">
+        <label class="form-label" for="username">Username:</label>
+        <input type="text" class="form-control {{#if err.username}}is-invalid{{/if}}" placeholder="Enter your username"
+            name="username" id="username" value="{{username}}" required />
+        <div class="invalid-feedback">{{err.username}}</div>
+    </div>
+
+       <div class="mb-2">
+        <label class="form-label" for="password">Password:</label>
+        <input type="text" class="form-control {{#if err.password}}is-invalid{{/if}}" placeholder="Enter your password" id="password"
+            name="password" value="{{submittedPassword}}">
+        <div class="invalid-feedback"> {{err.password}} </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Login</button>
+</form>

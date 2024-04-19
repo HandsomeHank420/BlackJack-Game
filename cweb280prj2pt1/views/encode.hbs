@@ -1,0 +1,38 @@
+<h1>{{currentUser}}</h1>
+
+<form action="/encode" method="post" novalidate>
+    <h1>{{title}}</h1>
+
+    <div class="mb-2">
+        <label for="message">Message:</label>
+        <input type="text" class="form-control {{#if err.message}}is-invalid{{/if}}" placeholder="Enter Message To Encode"
+            name="message" id="message" required />
+        <div class="invalid-feedback">{{err.message}}</div>
+    </div>
+
+    <div class="mb-2" >
+        <label for="expiryDate">Choose An Expiry Date</label>
+        <input id="expiryDate" class="form-control {{#if err.expiryDate}}is-invalid{{/if}}" type="datetime-local" name="expiryDate"/>
+        <div class="invalid-feedback">{{err.expiryDate}}</div>
+    </div>
+
+    <div class="mb-2">
+        <label for="email">Email To Receive Message:</label>
+        <input type="email" class="form-control {{#if err.email}}is-invalid{{/if}}" placeholder="Enter Email" name="email" id="email" required />
+        <div class="invalid-feedback">{{err.email}}</div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+<br><br><br><br>
+<!--
+    sugar for user feedback of creating a secret message
+-->
+{{#if toast}}
+<div class="alert alert-secondary alert-dismissible" role="alert" >
+    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+<a href="/decode?msg={{secretMessage}}">You have submitted a secret message!</a>
+</div>
+{{/if}}
+
